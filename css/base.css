@@ -1,0 +1,28 @@
+/*
+ * @tyange-labs/design-system — 선택적 베이스 스타일
+ *
+ * 강제하지 않는다: 이미 자체 베이스 리셋이 있는 앱(lovelog, palim)은 이 파일을
+ * 임포트하지 않아도 된다. 새 프로젝트나 베이스가 아직 없는 앱을 위한 합리적 기본값.
+ */
+
+body {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  font-family: var(--tl-font-sans);
+  font-size: var(--tl-text-base);
+  line-height: var(--tl-text-base-lh);
+  /* 한글 단어 단위 줄바꿈 — tyange-dev에서 이미 쓰는 패턴 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--tl-ring);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--tl-accent-soft);
+}

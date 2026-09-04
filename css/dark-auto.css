@@ -1,0 +1,45 @@
+/*
+ * @tyange-labs/design-system — 다크 모드 오버라이드 (prefers-color-scheme 자동 전략)
+ *
+ * gotolib처럼 다크 토글 UI가 없고 OS 설정을 그대로 따르는 앱을 위한 것.
+ * css/dark.css와 값은 동일하고, 트리거만 .dark 클래스 대신 미디어 쿼리다.
+ * 토글이 있는 앱은 이 파일 대신 css/dark.css를 쓴다 — 둘을 같이 쓰지 않는다.
+ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --tl-bg: #171614;
+    --tl-surface: #201f1c;
+    --tl-surface-sunken: #131211;
+    --tl-overlay: #26251f;
+
+    --tl-fg: #f2f0ea;
+    --tl-fg-muted: #b6b1a4;
+    --tl-fg-subtle: #847f72;
+    --tl-fg-on-accent: #0d0d12;
+
+    --tl-border: #38352d;
+    --tl-border-strong: #7a7566;
+    --tl-ring: #9698ff;
+
+    --tl-accent: #9698ff;
+    --tl-accent-hover: #aeb0ff;
+    --tl-accent-soft: #2a2a4a;
+
+    --tl-danger: #ff6b5e;
+    --tl-danger-fg: #1a0503;
+    --tl-danger-soft: #3a1410;
+    --tl-warning: #e0a437;
+    --tl-warning-fg: #1f1400;
+    --tl-warning-soft: #3a2a05;
+    --tl-success: #4fce93;
+    --tl-success-fg: #03170d;
+    --tl-success-soft: #0d3521;
+
+    --tl-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --tl-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.36);
+    --tl-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.44);
+  }
+}

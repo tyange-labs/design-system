@@ -1,0 +1,24 @@
+{
+  "name": "@tyange-labs/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "tyange-labs 프로젝트들이 공유하는 디자인 토큰 (React/Vue/Solid 공통, Tailwind v4 선택 지원)",
+  "type": "module",
+  "license": "UNLICENSED",
+  "exports": {
+    "./tokens.css": "./css/tokens.css",
+    "./dark.css": "./css/dark.css",
+    "./dark-auto.css": "./css/dark-auto.css",
+    "./theme.css": "./css/theme.css",
+    "./base.css": "./css/base.css",
+    "./index.css": "./css/index.css"
+  },
+  "files": [
+    "css",
+    "docs"
+  ],
+  "scripts": {
+    "contrast": "bun scripts/contrast.ts",
+    "preview": "bunx serve preview -l 4173"
+  }
+}

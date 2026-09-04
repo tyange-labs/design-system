@@ -1,0 +1,143 @@
+/*
+ * @tyange-labs/design-system — 원시 스케일 + 시맨틱 토큰 (라이트, 기본값)
+ *
+ * 순수 CSS 커스텀 프로퍼티만 사용한다. Tailwind 유틸리티 클래스는 여기 없다
+ * (이유: docs/decisions.md). 모든 변수는 --tl- 접두사로 네임스페이스를 가져
+ * daisyUI(--*) · Nuxt UI(--ui-*) 등 소비 앱이 이미 쓰는 변수와 충돌하지 않는다.
+ *
+ * 앱 코드는 원시 스케일(--tl-n-*, --tl-a-*)을 직접 쓰지 않고 시맨틱 변수만 쓴다.
+ * 다크 모드 값은 css/dark.css(.dark 클래스) 또는 css/dark-auto.css
+ * (prefers-color-scheme)에서 이 파일의 변수를 재정의한다.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* ---- 원시 스케일: 뉴트럴 (미세하게 따뜻한 무채색) ---- */
+  --tl-n-0: #ffffff;
+  --tl-n-50: #faf9f7;
+  --tl-n-100: #f3f2ef;
+  --tl-n-200: #e4e1da;
+  --tl-n-300: #c9c4b8;
+  --tl-n-400: #a9a394;
+  --tl-n-500: #8a8578;
+  --tl-n-600: #5c5952;
+  --tl-n-700: #3d3b36;
+  --tl-n-800: #26251f;
+  --tl-n-900: #1a1917;
+
+  /* ---- 원시 스케일: 액센트 (인디고) ---- */
+  --tl-a-50: #eeeeff;
+  --tl-a-100: #dcdcff;
+  --tl-a-300: #9698ff;
+  --tl-a-500: #5b5fee;
+  --tl-a-600: #4a4ed9;
+  --tl-a-700: #3a3ec2;
+  --tl-a-900: #23246e;
+
+  /* ---- 원시 스케일: 상태색 ---- */
+  --tl-danger-500: #c8372c;
+  --tl-danger-soft: #fbe9e7;
+  --tl-warning-500: #a6620a;
+  --tl-warning-soft: #fbf0dc;
+  --tl-success-500: #1f7a4d;
+  --tl-success-soft: #e5f5ec;
+
+  /* ---- 시맨틱: 배경/표면 ---- */
+  --tl-bg: var(--tl-n-50);
+  --tl-surface: var(--tl-n-0);
+  --tl-surface-sunken: var(--tl-n-100);
+  --tl-overlay: var(--tl-n-0);
+
+  /* ---- 시맨틱: 전경 ---- */
+  --tl-fg: var(--tl-n-900);
+  --tl-fg-muted: var(--tl-n-600);
+  --tl-fg-subtle: var(--tl-n-500);
+  --tl-fg-on-accent: #ffffff;
+
+  /* ---- 시맨틱: 경계 ---- */
+  --tl-border: var(--tl-n-200);
+  --tl-border-strong: #8f897a;
+  --tl-ring: var(--tl-a-500);
+
+  /* ---- 시맨틱: 액센트 ---- */
+  --tl-accent: var(--tl-a-500);
+  --tl-accent-hover: var(--tl-a-600);
+  --tl-accent-soft: var(--tl-a-50);
+
+  /* ---- 시맨틱: 상태 ---- */
+  --tl-danger: var(--tl-danger-500);
+  --tl-danger-fg: #ffffff;
+  --tl-danger-soft: var(--tl-danger-soft);
+  --tl-warning: var(--tl-warning-500);
+  --tl-warning-fg: #ffffff;
+  --tl-warning-soft: var(--tl-warning-soft);
+  --tl-success: var(--tl-success-500);
+  --tl-success-fg: #ffffff;
+  --tl-success-soft: var(--tl-success-soft);
+
+  /* ---- 타이포그래피 ---- */
+  --tl-font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  --tl-font-mono:
+    "Monaspace Neon", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --tl-text-xs: 0.75rem; /* 12px */
+  --tl-text-xs-lh: 1.5;
+  --tl-text-sm: 0.875rem; /* 14px */
+  --tl-text-sm-lh: 1.5;
+  --tl-text-base: 1rem; /* 16px */
+  --tl-text-base-lh: 1.6;
+  --tl-text-lg: 1.125rem; /* 18px */
+  --tl-text-lg-lh: 1.5;
+  --tl-text-xl: 1.375rem; /* 22px */
+  --tl-text-xl-lh: 1.4;
+  --tl-text-2xl: 1.75rem; /* 28px */
+  --tl-text-2xl-lh: 1.3;
+  --tl-text-3xl: 2.25rem; /* 36px */
+  --tl-text-3xl-lh: 1.2;
+  --tl-text-4xl: 3rem; /* 48px */
+  --tl-text-4xl-lh: 1.1;
+
+  --tl-tracking-tight: -0.02em; /* 한글 제목용 */
+
+  /* ---- 간격 (4px 배수) ---- */
+  --tl-space-1: 0.25rem;
+  --tl-space-2: 0.5rem;
+  --tl-space-3: 0.75rem;
+  --tl-space-4: 1rem;
+  --tl-space-5: 1.25rem;
+  --tl-space-6: 1.5rem;
+  --tl-space-8: 2rem;
+  --tl-space-10: 2.5rem;
+  --tl-space-12: 3rem;
+  --tl-space-16: 4rem;
+
+  /* ---- 라디우스 ---- */
+  --tl-radius-sm: 0.25rem;
+  --tl-radius-md: 0.5rem;
+  --tl-radius-lg: 0.75rem;
+  --tl-radius-xl: 1rem;
+  --tl-radius-full: 999px;
+
+  /* ---- 그림자 ---- */
+  --tl-shadow-sm: 0 1px 2px rgba(26, 25, 23, 0.06);
+  --tl-shadow-md: 0 4px 12px rgba(26, 25, 23, 0.08);
+  --tl-shadow-lg: 0 12px 32px rgba(26, 25, 23, 0.12);
+
+  /* ---- 모션 ---- */
+  --tl-duration-fast: 120ms;
+  --tl-duration-base: 200ms;
+  --tl-duration-slow: 320ms;
+  --tl-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --tl-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- z-index ---- */
+  --tl-z-dropdown: 1000;
+  --tl-z-sticky: 1100;
+  --tl-z-overlay: 1200;
+  --tl-z-modal: 1300;
+  --tl-z-popover: 1400;
+  --tl-z-toast: 1500;
+}

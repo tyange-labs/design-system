@@ -1,0 +1,87 @@
+/*
+ * @tyange-labs/design-system — Tailwind v4 브리지 (Tailwind 소비자 전용)
+ *
+ * Tailwind를 쓰지 않는 앱(gotolib)은 이 파일을 임포트하지 않는다 — @theme는
+ * Tailwind가 처리하는 at-rule이라 Tailwind 없이 그냥 CSS로 로드되면 무시되고
+ * 유틸리티도 생성되지 않는다(에러는 안 나지만 아무 효과가 없다).
+ *
+ * 유틸리티 이름도 tl- 로 네임스페이스한다(bg-tl-accent, text-tl-fg-muted 등).
+ * daisyUI(tyange-blog)가 --color-accent/--color-success/--color-warning/
+ * --color-neutral 같은 이름을 이미 theme 슬롯으로 쓰고 있어, --color-accent처럼
+ * 접두사 없는 이름을 여기서 정의하면 나중에 daisyUI를 쓰는 앱에 이 파일을 얹는
+ * 순간 값이 서로 덮어써진다. tl- 접두사를 붙이면 그 문제가 원천적으로 없다.
+ *
+ * css/tokens.css의 --tl-* 원시 변수를 Tailwind 유틸리티 이름으로 매핑만 한다.
+ * 이 파일 자체는 값을 정의하지 않는다 — tokens.css/dark.css보다 반드시 뒤에 임포트.
+ *
+ * 사용 예 (Vite/Nuxt/Next 등 Tailwind v4 CSS-first 프로젝트의 진입 CSS):
+ *   @import "tailwindcss";
+ *   @import "@tyange-labs/design-system/tokens.css";
+ *   @import "@tyange-labs/design-system/dark.css";   (또는 dark-auto.css)
+ *   @import "@tyange-labs/design-system/theme.css";
+ *   @custom-variant dark (&:where(.dark, .dark *));   (dark.css를 쓸 경우)
+ *
+ * 결과 유틸리티: bg-tl-bg, bg-tl-surface, text-tl-fg, text-tl-fg-muted,
+ * border-tl-border, ring-tl-ring, bg-tl-accent, text-tl-danger,
+ * font-tl-sans, text-tl-sm(폰트 크기), rounded-tl-md, shadow-tl-md …
+ */
+
+@theme inline {
+  --color-tl-bg: var(--tl-bg);
+  --color-tl-surface: var(--tl-surface);
+  --color-tl-surface-sunken: var(--tl-surface-sunken);
+  --color-tl-overlay: var(--tl-overlay);
+
+  --color-tl-fg: var(--tl-fg);
+  --color-tl-fg-muted: var(--tl-fg-muted);
+  --color-tl-fg-subtle: var(--tl-fg-subtle);
+  --color-tl-fg-on-accent: var(--tl-fg-on-accent);
+
+  --color-tl-border: var(--tl-border);
+  --color-tl-border-strong: var(--tl-border-strong);
+  --color-tl-ring: var(--tl-ring);
+
+  --color-tl-accent: var(--tl-accent);
+  --color-tl-accent-hover: var(--tl-accent-hover);
+  --color-tl-accent-soft: var(--tl-accent-soft);
+
+  --color-tl-danger: var(--tl-danger);
+  --color-tl-danger-fg: var(--tl-danger-fg);
+  --color-tl-danger-soft: var(--tl-danger-soft);
+  --color-tl-warning: var(--tl-warning);
+  --color-tl-warning-fg: var(--tl-warning-fg);
+  --color-tl-warning-soft: var(--tl-warning-soft);
+  --color-tl-success: var(--tl-success);
+  --color-tl-success-fg: var(--tl-success-fg);
+  --color-tl-success-soft: var(--tl-success-soft);
+
+  --font-tl-sans: var(--tl-font-sans);
+  --font-tl-mono: var(--tl-font-mono);
+
+  --text-tl-xs: var(--tl-text-xs);
+  --text-tl-xs--line-height: var(--tl-text-xs-lh);
+  --text-tl-sm: var(--tl-text-sm);
+  --text-tl-sm--line-height: var(--tl-text-sm-lh);
+  --text-tl-base: var(--tl-text-base);
+  --text-tl-base--line-height: var(--tl-text-base-lh);
+  --text-tl-lg: var(--tl-text-lg);
+  --text-tl-lg--line-height: var(--tl-text-lg-lh);
+  --text-tl-xl: var(--tl-text-xl);
+  --text-tl-xl--line-height: var(--tl-text-xl-lh);
+  --text-tl-2xl: var(--tl-text-2xl);
+  --text-tl-2xl--line-height: var(--tl-text-2xl-lh);
+  --text-tl-3xl: var(--tl-text-3xl);
+  --text-tl-3xl--line-height: var(--tl-text-3xl-lh);
+  --text-tl-4xl: var(--tl-text-4xl);
+  --text-tl-4xl--line-height: var(--tl-text-4xl-lh);
+
+  --radius-tl-sm: var(--tl-radius-sm);
+  --radius-tl-md: var(--tl-radius-md);
+  --radius-tl-lg: var(--tl-radius-lg);
+  --radius-tl-xl: var(--tl-radius-xl);
+  --radius-tl-full: var(--tl-radius-full);
+
+  --shadow-tl-sm: var(--tl-shadow-sm);
+  --shadow-tl-md: var(--tl-shadow-md);
+  --shadow-tl-lg: var(--tl-shadow-lg);
+}

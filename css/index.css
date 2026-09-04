@@ -1,0 +1,10 @@
+/*
+ * @tyange-labs/design-system — 편의 임포트 (토큰 + 다크, .dark 클래스 전략)
+ *
+ * OS 설정을 그대로 따르고 싶다면 이 파일 대신 css/tokens.css +
+ * css/dark-auto.css를 개별 임포트한다. Tailwind 유틸리티가 필요하면
+ * css/theme.css를 이 뒤에 추가로 임포트한다(docs/adoption.md 참고).
+ */
+
+@import "./tokens.css";
+@import "./dark.css";
