@@ -37,11 +37,11 @@
 
   /* ---- 원시 스케일: 상태색 ---- */
   --tl-danger-500: #c8372c;
-  --tl-danger-soft: #fbe9e7;
+  --tl-danger-100: #fbe9e7;
   --tl-warning-500: #a6620a;
-  --tl-warning-soft: #fbf0dc;
+  --tl-warning-100: #fbf0dc;
   --tl-success-500: #1f7a4d;
-  --tl-success-soft: #e5f5ec;
+  --tl-success-100: #e5f5ec;
 
   /* ---- 시맨틱: 배경/표면 ---- */
   --tl-bg: var(--tl-n-50);
@@ -68,13 +68,13 @@
   /* ---- 시맨틱: 상태 ---- */
   --tl-danger: var(--tl-danger-500);
   --tl-danger-fg: #ffffff;
-  --tl-danger-soft: var(--tl-danger-soft);
+  --tl-danger-soft: var(--tl-danger-100);
   --tl-warning: var(--tl-warning-500);
   --tl-warning-fg: #ffffff;
-  --tl-warning-soft: var(--tl-warning-soft);
+  --tl-warning-soft: var(--tl-warning-100);
   --tl-success: var(--tl-success-500);
   --tl-success-fg: #ffffff;
-  --tl-success-soft: var(--tl-success-soft);
+  --tl-success-soft: var(--tl-success-100);
 
   /* ---- 타이포그래피 ---- */
   --tl-font-sans:
