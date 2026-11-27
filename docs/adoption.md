@@ -3,13 +3,13 @@
 ## 설치 (git 의존성)
 
 ```bash
-bun add "git+ssh://git@git.tyange.com/tyange-labs/design-system.git"
+bun add "github:tyange-labs/design-system"
 ```
 
 `package.json`에 아래처럼 기록된다. 버전을 고정하고 싶으면 `#<커밋SHA>`를 뒤에 붙인다.
 
 ```json
-"@tyange-labs/design-system": "git+ssh://git@git.tyange.com/tyange-labs/design-system.git"
+"@tyange-labs/design-system": "github:tyange-labs/design-system"
 ```
 
 ## Tailwind v4 CSS-first 프로젝트 (lovelog, palim, tyange-dev, …)

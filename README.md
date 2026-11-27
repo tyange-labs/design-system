@@ -9,7 +9,7 @@ React·Vue·Solid·Tailwind 유무와 무관하게 순수 CSS 커스텀 프로�
 ## 설치
 
 ```bash
-bun add "git+ssh://git@git.tyange.com/tyange-labs/design-system.git"
+bun add "github:tyange-labs/design-system"
 ```
 
 ## 빠른 시작
